@@ -27,4 +27,14 @@ const createUser = async (email, nickname, hashedPw, profile_image) => {
   return user;
 };
 
-module.exports = { createUser };
+const loginUser = async (email, password) => {
+  const userEmail = await myDataSource.query(
+    `SELECT id, email, password
+    FROM users
+    WHERE email = ?`,
+    [email]
+  );
+  return userEmail;
+};
+
+module.exports = { createUser, loginUser };

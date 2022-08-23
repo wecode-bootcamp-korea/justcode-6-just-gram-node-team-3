@@ -1,5 +1,6 @@
 const userService = require("../service/userService");
 
+//회원가입
 const createUser = async (req, res) => {
   const { email, nickname, password, profile_image } = req.body;
 
@@ -18,4 +19,13 @@ const createUser = async (req, res) => {
   res.status(201).json({ massage: "userCreated" });
 };
 
-module.exports = { createUser };
+//로그인
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  const token = await userService.loginUser(email, password);
+
+  res.status(200).json({ massage: "LOGIN_SUCCESS", token: token });
+};
+
+module.exports = { createUser, loginUser };
