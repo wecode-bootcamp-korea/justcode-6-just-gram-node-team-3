@@ -26,16 +26,27 @@ const createUser = async (email, nickname, password, profile_image) => {
 
 //로그인
 const loginUser = async (email, password) => {
-  //body에서 받아온 pw와 user에서 받아온 pw비교
-  const comparePw = bcrypt.compareSync(password, userEmail[0].password);
+  const selectUser = await userDao.selectUser(email, password);
 
-  if (!comparePw) {
-    res.status(400).json({ massage: "비밀번호가 일치하지 않습니다." });
+  if (!selectUser[0]) {
+    const error = new Error("NOT_A_USER");
+    error.statusCode = 404;
+    throw error;
   }
+  //body에서 받아온 pw와 user에서 받아온 pw비교
+  const comparePw = bcrypt.compareSync(password, selectUser[0].password);
 
-  const token = jwt.sign({ userId: user.id }, "secretKey");
-
-  return await userDao.loginUser(email, password);
+  if (comparePw) {
+    const token = jwt.sign(
+      { userId: selectUser[0].id },
+      process.env.SECRET_KEY
+    );
+    return token;
+  } else {
+    const error = new Error("WRONG_PASSWORD");
+    error.statusCode = 400;
+    throw error;
+  }
 };
 
 module.exports = { createUser, loginUser };

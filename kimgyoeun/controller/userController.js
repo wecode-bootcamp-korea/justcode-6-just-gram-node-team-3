@@ -5,27 +5,37 @@ const createUser = async (req, res) => {
   const { email, nickname, password, profile_image } = req.body;
 
   if (!email) {
-    res.status(400).json({ massage: "이메일이 입력되지 않았습니다." });
+    res.status(400).json({ message: "이메일이 입력되지 않았습니다." });
     return;
   }
 
   if (!password) {
-    res.status(400).json({ massage: "비밀번호가 입력되지 않았습니다." });
+    res.status(400).json({ message: "비밀번호가 입력되지 않았습니다." });
     return;
   }
 
   await userService.createUser(email, nickname, password, profile_image);
 
-  res.status(201).json({ massage: "userCreated" });
+  res.status(201).json({ message: "userCreated" });
 };
 
 //로그인
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  const token = await userService.loginUser(email, password);
+    if (!email || !password) {
+      const error = new Error("KEY_ERROR");
+      error.statusCode = 400;
+      throw error;
+    }
 
-  res.status(200).json({ massage: "LOGIN_SUCCESS", token: token });
+    const token = await userService.loginUser(email, password);
+
+    res.status(200).json({ message: "LOGIN_SUCCESS", token: token });
+  } catch (err) {
+    return res.status(err.statusCode || 500).json({ message: err.message });
+  }
 };
 
 module.exports = { createUser, loginUser };

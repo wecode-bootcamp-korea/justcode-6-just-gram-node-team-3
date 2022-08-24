@@ -5,13 +5,13 @@ const createPost = async (req, res) => {
   const { user_id, contents, posting_id, image_url } = req.body;
 
   if (!image_url) {
-    res.status(400).json({ massage: "이미지가 첨부되지 않았습니다." });
+    res.status(400).json({ message: "이미지가 첨부되지 않았습니다." });
     return;
   }
 
   await postService.createPost(user_id, contents, posting_id, image_url);
 
-  res.status(201).json({ massage: "postCreated" });
+  res.status(201).json({ message: "postCreated" });
 };
 
 //게시글 조회
@@ -23,9 +23,7 @@ const readPost = async (req, res) => {
 //유저 게시글 조회
 const readUserPost = async (req, res) => {
   const { userId } = req.params;
-
   const userPostings = await postService.readUserPost(userId);
-
   res.status(200).json({ data: userPostings });
 };
 

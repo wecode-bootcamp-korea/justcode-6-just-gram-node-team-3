@@ -27,14 +27,14 @@ const createUser = async (email, nickname, hashedPw, profile_image) => {
   return user;
 };
 
-const loginUser = async (email, password) => {
-  const userEmail = await myDataSource.query(
+const selectUser = async (email) => {
+  const selectUser = await myDataSource.query(
     `SELECT id, email, password
     FROM users
     WHERE email = ?`,
     [email]
   );
-  return userEmail;
+  return selectUser;
 };
 
-module.exports = { createUser, loginUser };
+module.exports = { createUser, selectUser };
