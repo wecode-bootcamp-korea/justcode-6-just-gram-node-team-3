@@ -1,9 +1,6 @@
-require("dotenv").config();
 const http = require("http");
-const express = require("express");
-const router = require("./routers");
-const cors = require("cors");
-const morgan = require("morgan");
+require("dotenv").config();
+const { createApp } = require("./app");
 // const { env } = require("process");
 
 /* const {
@@ -15,13 +12,7 @@ const morgan = require("morgan");
   // userPostSearch,
 } = require("./user"); */
 
-const app = express();
-app.use(express.json());
-app.use(router);
-
-app.use(cors());
-app.use(morgan());
-
+const app = createApp();
 const server = http.createServer(app);
 
 server.listen(8000, () => {
