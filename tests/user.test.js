@@ -37,12 +37,13 @@ describe("User signup test", () => {
   });
 
   test("SUCCESS: login", async () => {
-    await request(app)
+    const response = await request(app)
       .post("/users/login")
       .send({
         username: "kimcode",
         password: "password123",
       })
-      .expect(200);
+    expect(response).toBe(200);
+    expect(response.body.has('token')).toBe(true)
   });
 });
