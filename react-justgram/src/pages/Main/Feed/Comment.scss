@@ -1,0 +1,71 @@
+$border-style: 1px solid lightgray;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+.comment-text-box {
+  padding: 0 12px;
+
+  li {
+    position: relative;
+    padding-bottom: 3px;
+    list-style-type: none;
+    font-size: 14px;
+
+    span {
+      margin-right: 3px;
+      font-weight: bold;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      border: none;
+      background-color: white;
+      color: lightgray;
+    }
+  }
+}
+
+.minute {
+  margin: 8px 0 10px 12px;
+  color: grey;
+  font-size: 12px;
+}
+/*feed 댓글 - 피드 댓글 인풋*/
+.comment-input {
+  position: relative;
+  justify-content: space-between;
+  padding: 12px;
+  border-top: $border-style;
+  @include flex;
+
+  input {
+    height: 30px;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  #upload-id-input {
+    width: 20%;
+  }
+
+  #upload-comment-input {
+    width: 65%;
+  }
+  .upload-btn {
+    position: absolute;
+    right: 12px;
+    top: 19px;
+    background-color: white;
+    border: none;
+    color: #0095f6;
+    font-weight: bold;
+  }
+}

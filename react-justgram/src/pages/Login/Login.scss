@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+  @include flex-center;
+
+  .login-container {
+    width: 380px;
+    border: 1px solid rgb(225, 224, 224);
+    border-radius: 2px;
+    background-color: white;
+
+    .logo-wrapper {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      @include flex-center;
+
+      .logo-text {
+        font-family: "Lobster", cursive;
+        font-size: 45px;
+      }
+    }
+
+    .form-wrapper {
+      padding-bottom: 20px;
+
+      .input-wrapper {
+        width: 280px;
+        margin: 8px auto;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        @include flex-center;
+
+        input {
+          width: 100%;
+          padding: 8px;
+          background-color: rgb(250, 250, 250);
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .button-wrapper {
+      width: 280px;
+      margin: 14px auto;
+      @include flex-center;
+
+      button {
+        width: 280px;
+        padding: 8px;
+        color: white;
+        background-color: #0094f680;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        @include flex-center;
+      }
+
+      .active {
+        background-color: #0095f6;
+        cursor: pointer;
+      }
+    }
+    .extra-wrapper {
+      padding-top: 90px;
+      padding-bottom: 20px;
+      @include flex-center;
+
+      .find-pw {
+        color: rgba(7, 37, 94, 0.992);
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}

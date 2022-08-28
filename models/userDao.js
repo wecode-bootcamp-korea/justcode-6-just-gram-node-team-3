@@ -35,7 +35,6 @@ const createUser = async (email, nickname, hashedPw, profile_image) => {
 
 // Mission 6 Login =====================
 const userLogin = async (email) => {
-  console.log("model 1");
   const [user] = await myDataSource.query(
     `
     SELECT
@@ -47,7 +46,6 @@ const userLogin = async (email) => {
   `,
     [email]
   );
-  console.log("model 2");
   return user;
 };
 

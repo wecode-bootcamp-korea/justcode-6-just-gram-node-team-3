@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userId": "ioni19",
+    "profileImg": "img/meaong.png",
+    "photoUrl": "img/coding.jpeg",
+    "content": "오늘도 불코딩 🔥🔥",
+    "numOfComments": 6
+  },
+  {
+    "id": 2,
+    "userId": "cat_lover",
+    "profileImg": "img/cat.png",
+    "photoUrl": "img/cat.png",
+    "content": "고양이 쏘 큐트",
+    "numOfComments": 4
+  },
+  {
+    "id": 3,
+    "userId": "ioni19",
+    "profileImg": "https://url.kr/x18wb7",
+    "photoUrl": "img/5mok.png",
+    "content": "오목 또 이김!",
+    "numOfComments": 5
+  }
+]
