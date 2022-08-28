@@ -22,7 +22,6 @@ const createUser = async (email, nickname, password, profile_image) => {
 
 // Mission 6 Login =====================
 const userLogin = async (email, password) => {
-  console.log("service 1");
   const user = await userDao.userLogin(email);
 
   // 입력한 email,password 가 저장된 데이터와 동일한 경우
@@ -32,7 +31,6 @@ const userLogin = async (email, password) => {
 
     //token 생성
     const token = jwt.sign({ userId: user.id }, "secretKey");
-    console.log(token);
     const userLoginData = {
       user: user,
       isPasswordCorrect: isPasswordCorrect,

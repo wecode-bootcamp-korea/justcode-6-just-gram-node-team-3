@@ -20,6 +20,7 @@ const createUser = async (req, res) => {
       profile_image
     );
     // console.log("controller 2");
+
     res.status(201).json({ message: "userCreated" });
   } catch {
     res.status(500).json({ message: "userCreated Error" });
@@ -28,7 +29,6 @@ const createUser = async (req, res) => {
 
 // Mission 6 Login =====================
 const userLogin = async (req, res) => {
-  console.log("controller 1 ");
   const { email, password } = req.body;
 
   if (!(email && password)) {
@@ -53,7 +53,6 @@ const userLogin = async (req, res) => {
       res.status(400).json({ message: "INVALID_PASSWORD" });
       return;
     }
-
     res.status(200).json({ message: "loginSuccess", token: user.token });
   } catch {
     res.status(500).json({ message: "login Error" });

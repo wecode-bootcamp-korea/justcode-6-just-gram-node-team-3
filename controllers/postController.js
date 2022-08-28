@@ -16,6 +16,7 @@ const createPost = async (req, res) => {
     // console.log("controller 2");
     res.status(201).json({ message: "postCreated" });
   } catch {
+    console.log(err);
     res.status(500).json({ message: "postCreated Error" });
   }
 };

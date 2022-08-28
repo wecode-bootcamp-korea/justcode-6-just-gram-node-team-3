@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "feedId": 1,
+    "userId": "justcode",
+    "content": "예원님 열심히 하시네요",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 2,
+    "feedId": 1,
+    "userId": "5mok_bak4",
+    "content": "ㅎ",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 3,
+    "feedId": 1,
+    "userId": "bongbororo",
+    "content": "빠이탱!!!!!🔥🔥🔥🔥🔥",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 4,
+    "feedId": 2,
+    "userId": "u_bin",
+    "content": "언제 주무시나여",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 5,
+    "feedId": 2,
+    "userId": "ji_silver",
+    "content": "저는 밤 샐 예정입니다아",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 6,
+    "feedId": 2,
+    "userId": "5in_hwan",
+    "content": "굿",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 7,
+    "feedId": 3,
+    "userId": "june_0",
+    "content": "감이 대답하면? 예감~",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 8,
+    "feedId": 3,
+    "userId": "sang_ho",
+    "content": "전 시민입니다",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 9,
+    "feedId": 3,
+    "userId": "iced_zero",
+    "content": "젭알... 저랑 오목 둬 주세요...",
+    "createAt": "1시간 전"
+  },
+  {
+    "id": 10,
+    "feedId": 3,
+    "userId": "yuna_lee",
+    "content": "화이팅이에요",
+    "createAt": "1시간 전"
+  }
+]
