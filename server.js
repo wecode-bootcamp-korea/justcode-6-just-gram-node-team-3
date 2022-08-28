@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(router);
 
-app.use(cors("http://localhost:4000"));
+app.use(cors("http://localhost:3000"));
 
 app.get("/", (req, res) => {
   res.status(200).send("pong");
