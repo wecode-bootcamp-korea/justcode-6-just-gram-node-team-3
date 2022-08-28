@@ -1,21 +1,11 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const http = require("http");
-const express = require("express");
-const router = require("./routers");
-const cors = require("cors");
+const { createApp } = require("./app");
 
-const app = express();
-app.use(express.json());
-app.use(router);
-
-app.use(cors("http://localhost:3000"));
-
-app.get("/", (req, res) => {
-  res.status(200).send("pong");
-});
-
+const app = createApp();
 const server = http.createServer(app);
+
 server.listen(8000, () => {
   console.log("server is listening on PORT 8000");
 });
